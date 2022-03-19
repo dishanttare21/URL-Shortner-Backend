@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const shortid = require('shortid');
 
 const urlSchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: true
+    },
     longUrl: {
         type: String,
         required: true
@@ -14,6 +18,13 @@ const urlSchema = new mongoose.Schema({
     date:{
         type: String,
         default: Date.now()
+    },
+    urlDescription: {
+        type: String
+    },
+    clicks: {
+        type: Number,
+        default: 0
     }
 });
 
